@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DayAnecdote from "./components/DayAnecdote";
+
 import MostVote from "./components/MostVote";
 
 const App = () => {
@@ -23,14 +23,14 @@ const App = () => {
   const highestVoteNo = Math.max(...votes);
   const maxPos = votes.findIndex((vote) => vote === highestVoteNo);
   const highestVote = anecdotes[maxPos];
-  console.log(highestVote);
+
   const voteHandler = () => {
     const voteCopy = [...votes];
     voteCopy[selected] += 1;
     setVotes(voteCopy);
   };
   const eachVote = votes[selected];
-  console.log(votes);
+
   return (
     <>
       <div>{anecdotes[selected]}</div>
